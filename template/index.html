@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>VCM Manager</title>
+
+		<!-- jQuery and jQuery UI (REQUIRED) -->
+		<link rel="stylesheet" type="text/css" media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+		<!-- elFinder CSS (REQUIRED) -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/elfinder.min.css" />
+		<link rel="stylesheet" type="text/css" media="screen" href="css/theme.css" />
+        <style type="text/css">
+            .center{
+                margin: 0 auto;
+                text-align: center;
+                list-style: none;
+            }
+            .button{
+                color: rgb(230, 230, 230);
+                font-size: 20px;
+                padding: 10px;
+                text-shadow: 0px -1px 0px rgba(30, 30, 30, 0.8);
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                border-radius: 10px;
+                background: rgb(210, 20, 20);
+                background: -moz-linear-gradient(90deg, rgb(210, 20, 20) 30%, rgb(250, 20, 20) 70%);
+                background: -webkit-linear-gradient(90deg, rgb(210, 20, 20) 30%, rgb(250, 20, 20) 70%);
+                background: -o-linear-gradient(90deg, rgb(210, 20, 20) 30%, rgb(250, 20, 20) 70%);
+                background: -ms-linear-gradient(90deg, rgb(210, 20, 20) 30%, rgb(250, 20, 20) 70%);
+                background: linear-gradient(0deg, rgb(210, 20, 20) 30%, rgb(250, 20, 20) 70%);
+                -webkit-box-shadow: 0px 2px 1px rgba(50, 50, 50, 0.75);
+                -moz-box-shadow:    0px 2px 1px rgba(50, 50, 50, 0.75);
+                box-shadow:         0px 2px 1px rgba(50, 50, 50, 0.75);
+                border: none;
+                text-decoration: none;
+            }
+        </style>
+
+		<!-- elFinder JS (REQUIRED) -->
+		<script type="text/javascript" src="js/elfinder.min.js"></script>
+
+		<!-- elFinder translation (OPTIONAL) -->
+		<script type="text/javascript" src="js/i18n/elfinder.ru.js"></script>
+
+		<!-- elFinder initialization (REQUIRED) -->
+		<script type="text/javascript" charset="utf-8">
+			$().ready(function() {
+				var elf = $('#elfinder').elfinder({
+					url : 'php/connector.php'  // connector URL (REQUIRED)
+					// lang: 'ru',             // language (OPTIONAL)
+				}).elfinder('instance');
+			});
+		</script>
+	</head>
+	<body>
+
+		<!-- Element where elFinder will be created (REQUIRED) -->
+        <div class="center"><h1>VCM Uploader</h1></div>
+		<div id="elfinder"></div>
+        <br />
+        {check_admin}
+        <a href="logout.php" style="margin: 10px; font-size:20px; float:right" class="button" title="Thoát">Thoát</a>
+	</body>
+</html>
